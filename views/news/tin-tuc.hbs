@@ -1,0 +1,193 @@
+{{>header-stick}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="wr-content">
+    <div class="news-wr">
+        <div class="td-category-header td-container-wrap">
+            <div class="td-container">
+                <div class="td-pb-row">
+                    <div class="td-pb-span12">
+                        <div class="td-crumb-container">
+                            <div class="entry-crumbs"><span><a title="" class="entry-crumb" href="/">Trang
+                                        chủ</a></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i>
+                                <span class="td-bred-no-url-last">Tin tức</span>
+                            </div>
+                        </div>
+
+                        <h1 class="entry-title td-page-title">Tin tức</h1>
+                        <div class="td-category-description">
+                            <p>Tin tức cập nhật về Huế 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+
+                {{#each news}}
+                <div class="col-sm-3 col-lg-3">
+                    <div class="card card-item">
+                        <a href="/news/{{this.slug}}">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                        </a>
+
+                        <div class="card-body">
+                            <a href="/news/{{this.slug}}">
+                                <h5 class="card-title">{{this.title}}</h5>
+                            </a>
+                            <p class="card-text">{{this.paragraph}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .mt-4 {
+        margin-left: 1.5rem;
+        max-width: 90rem;
+    }
+
+    .card-item {
+        width: 22rem;
+        margin-bottom: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .card-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        height: 16rem;
+        border-radius: 15px 15px 0 0;
+
+    }
+
+    .btn-submit {
+        border-radius: 20px;
+    }
+
+    .l-footer__wrapper {
+        margin-top: 3.2rem;
+        padding: 1rem 0 0.5rem 0;
+        background: #f1f1f1;
+    }
+</style>
+
+
+{{!-- {{>footer}} --}}
+
+<div id="footer">
+    {{!-- Backtotop --}}
+    <div id="backtotop">
+        <img src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/icon-arrow.svg" alt=""
+            class="fluid-image">
+    </div>
+    <footer id="l-footer" class="l-footer">
+
+        {{!-- Footer --}}
+        <div class="wrp-container">
+            <div class="box-footerinfo">
+                <div class="box-footerinfo__logo">
+                    <p class="box-footerinfo__logo__img"><a href="#"><img
+                                src="https://svietnam.travel/wp-content/uploads/2020/01/logo-svietnam-travel.png" alt=""
+                                class="full-image"></a></p>
+                </div>
+                <div class="box-footerinfo__logo box-footerinfo__logo1">
+                    <p class="box-footerinfo__logo__img"><a href="#"><img
+                                src="https://www.visithcmc.vn/uploads/0000/1/2021/12/03/logo-traveloka-thai-031-150.png"
+                                alt="" class="full-image"></a></p>
+                </div>
+                <div class="box-footerinfo__register">
+                    <p class="box-footerinfo__register__ttl">ĐĂNG KÝ NHẬN TIN</p>
+                    <p class="box-footerinfo__register__txt">Nhận những câu chuyện du lịch mới từ<br
+                            class="is-visibleSp"> thành
+                        phố
+                        Huế đến hộp thư của bạn.</p>
+                    <form action="" class="frm-register subcribe-form bravo-subscribe-form bravo-form">
+                        <input type="hidden" name="_token" value=""> <input name="email" type="text"
+                            placeholder="Nhập địa chỉ Email của bạn" class="frm-register__input">
+                        <button style="clear: both;" type="submit" class="btn-submit btn frm-register__btn btn">Đăng
+                            ký<i class="fa fa-spinner fa-pulse fa-fw"></i></button>
+                    </form>
+                    <div id="form-mess">
+                        <div class="form-mess" style="width: 100%; text-align: center; font-size: 1.7rem;"></div>
+                    </div>
+                </div>
+                <div class="box-footerinfo__social">
+                    <ul class="lst-social">
+                        <li><a href="#"><img
+                                    src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/icon-facebook.svg"
+                                    alt="" class="full-image"></a></li>
+                        <li><a href="#"><img
+                                    src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/icon-instagram.svg"
+                                    alt="" class="full-image"></a></li>
+                        <li><a href="#"><img
+                                    src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/icon-tiktok.svg"
+                                    alt="" class="full-image"></a></li>
+                        <li><a href="#"><img
+                                    src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/icon-youtube.svg"
+                                    alt="" class="full-image"></a></li>
+                    </ul>
+                    <ul class="lst-download-app">
+                        <li><a href="#"><img
+                                    src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/ft-appstore.png"
+                                    alt="" class="fluid-image"></a></li>
+                        <li><a href="#"><img
+                                    src="http://www.visithcmc.vn/dist/frontend/page/assets/images/common/ft-googleplay.png"
+                                    alt="" class="fluid-image"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="footer-submenu">
+                <li><a href="/">Về Thành phố Huế</a></li>
+                <li><a href="">Đối tác</a></li>
+                <span class="breakline is-visibleSp"></span>
+                <li><a href="">Liên hệ</a></li>
+                <li><a href="">Điều khoản sử dụng</a></li>
+                <li><a href="">Cam kết bảo mật</a></li>
+            </ul>
+        </div>
+        <div class="l-footer__wrapper">
+            <div class="wrp-container">
+                <nav class="nav-contentinfo">
+                    <ul>
+                        <li><a href="">Trang chủ</a></li>
+                        <li><a href="">Khám phá</a></li>
+                        <li><a href="/">Kế hoạch chuyến đi</a></li>
+                        <li><a href="/">Lễ hội &amp; Sự kiện</a></li>
+                        <li><a href="/">Ưu đãi</a></li>
+                        <li><a href="/">Tin tức</a></li>
+                        <li><a href="/">Thông tin cần biết</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div>
+            <p class="power"> Powered by <a href="https://github.com/Crowz102">@Crowz</a> with ❤️️ </p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    function hidden() {
+        document.getElementById("header").style.display = "none";
+    }
+    hidden();
+</script>

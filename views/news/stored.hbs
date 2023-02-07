@@ -1,0 +1,82 @@
+{{>header-stick}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="mt-4">
+  <h3>Bài viết của tôi</h3>
+
+  <table class="table mt-4">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên bài viết</th>
+        <th scope="col" colspan="2">Thời gian tạo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each news}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <td>{{this.title}}</td>
+        <td>{{this.createdAt}}</td>
+        <td>
+          <a href="/news/{{this._id}}/edit" class="btn btn-link">Sửa</a>
+          <a href="" class="btn btn-link" data-toggle="modal" data-id="{{this._id}}"
+            data-target="#delete-new-modal">Xoá</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+{{!-- Confirm delete --}}
+<div id="delete-new-modal" class="modal" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xoá bài viết?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc chắn muốn xoá bài viết này?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+        <button id="btn-delete-new" type="button" class="btn btn-danger">Xoá bỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Delete hidden form --}}
+<form name="delete-new-form" method="POST"></form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let newId;
+    let btnDeleteNew = document.getElementById('btn-delete-new');
+    let deleteForm = document.forms['delete-new-form'];
+
+    $('#delete-new-modal').on('show.bs.modal', function (event) {
+      let button = $(event.relatedTarget);
+      newId = button.data('id');
+    });
+
+    btnDeleteNew.onclick = function () {
+      deleteForm.action = '/news/' + newId + '?_method=DELETE';
+      deleteForm.submit();
+    };
+  });
+</script>
+
+<script>
+  function hidden() {
+    document.getElementById("header").style.display = "none";
+  }
+  hidden();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

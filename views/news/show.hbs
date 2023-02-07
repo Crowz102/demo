@@ -1,0 +1,178 @@
+{{>header-stick}}
+<style>
+    .wrp-container--sm {
+        max-width: 1085px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 3rem;
+        box-sizing: border-box;
+    }
+
+    .breadcrumb {
+        font-size: 1.3rem;
+        margin-top: 6rem;
+    }
+
+    .fml-mon {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .breadcrumb li:first-child {
+        padding-left: 0;
+    }
+
+    .breadcrumb li {
+        display: inline-block;
+        position: relative;
+        padding: 0 0.5rem;
+    }
+
+    .breadcrumb li:last-child {
+        color: #2A2A2A;
+    }
+
+    .breadcrumb li:last-child:before {
+        content: '';
+        width: 0.9rem;
+        height: 1.7rem;
+        position: absolute;
+        top: 0.3em;
+        left: -0.8rem;
+    }
+
+    .breadcrumb a {
+        display: inline-block;
+        color: #969696;
+    }
+
+    .article-hdg {
+        font-size: 4rem;
+        letter-spacing: 0.02em;
+        line-height: 1.2;
+        margin: 1.6rem 0 0;
+    }
+
+    .wrp-container--sm {
+        max-width: 1085px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 3rem;
+        box-sizing: border-box;
+    }
+
+    article,
+    aside,
+    footer,
+    header,
+    small,
+    nav,
+    section,
+    figure,
+    figcaption,
+    main {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style: none;
+        background-color: transparent;
+        outline: none;
+    }
+
+    .txt-paragraph.content_news {
+        font-family: 'Roboto' !important;
+        font-feature-settings: "palt";
+        white-space: unset !important;
+    }
+
+    .txt-paragraph {
+        padding-top: 1.5rem;
+    }
+
+    .txt-paragraph {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #2A2A2A;
+    }
+
+    .txt-paragraph.content_news p {
+        font-size: 1.5rem !important;
+        line-height: 1.5 !important;
+        color: #2A2A2A;
+        font-family: 'Roboto' !important;
+        font-feature-settings: "palt";
+        white-space: unset !important;
+    }
+
+    .txt-paragraph.content_news img {
+        width: 100% !important;
+        height: auto;
+        margin-top: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .td-icon-right{
+        opacity: 0.3;
+    }
+
+    audio,
+    canvas,
+    iframe,
+    img,
+    svg,
+    video {
+        vertical-align: middle;
+    }
+
+    img {
+        line-height: 1;
+        outline: none;
+        border-style: none;
+    }
+
+    a {
+        color: #336699;
+        text-decoration: none;
+    }
+</style>
+
+<div class="show-content">
+    <div class="wrp-container--sm" id="l-content">
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb fml-mon">
+            <li><a href="/">Trang Chủ</a></li>
+            <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i>
+            <li class="">
+                <a href="/tin-tuc">Tin tức</a>
+            </li>
+            <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i>
+            <li class="active">
+                {{news.title}}
+            </li>
+
+        </ul>
+
+        <section class="sec-artcile">
+            <h2 class="article-hdg fml-mon">{{news.title}}</h2>
+        </section>
+    </div>
+    <div class="wrp-container--sm">
+        <section>
+            <div class="txt-paragraph content_news">
+                <section>
+                    <div class="txt-paragraph content_news">
+                        <p class="MsoNormal">{{news.paragraph}}</p>
+                        <p><img src="{{news.image}}" alt="{{news.title}}" width="1600" height="1238"></p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+</div>
+{{>footer}}
+
+<script>
+    function hidden() {
+        document.getElementById("header").style.display = "none";
+    }
+    hidden();
+</script>

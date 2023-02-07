@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/world-top-cities-2-2/180/63-512.png"
+        type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/header-stick.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <script language="JavaScript" src="../../js/main.js"></script>
+    <script language="JavaScript" src="../../js/admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Discover Hue City</title>
+</head>
+
+<body>
+    <div class="main" id="main">
+        <!-- HEADER-PART -->
+        
+        {{>header}}
+        
+        <div class="wr-content">
+            {{{body}}}
+        </div>
+        
+       
+    </div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $("#backtotop").click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+        })
+    })
+</script>
+
+</html>

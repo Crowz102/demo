@@ -1,0 +1,114 @@
+/* Header */
+.header {
+    width: 100%;
+}
+
+.header-wr-stick {
+    padding: 1em 20em;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    z-index: 100;
+    position: absolute;
+}
+
+/* Xử lí header */
+.top-header-stick {
+    background-color: rgb(114, 60, 175);
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 900;
+    width: 100%;
+    height: 80px;
+}
+
+.site-logo-stick {
+    margin-top: 5px;
+}
+
+.search-stick {
+    margin-top: -10px;
+}
+
+/* Search */
+.top-header-stick {
+    transition: all 0.5s ease-in-out;
+}
+
+.top-header-stick .search-stick {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.top-header-stick .search-stick button>.fa-solid {
+    font-size: 20px;
+    color: #fff;
+}
+
+.top-header-stick .search-stick .fa-solid {
+    margin-left: 0.7em;
+    font-size: 20px;
+    color: #fff;
+}
+
+.top-header-stick .search-stick button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 10px 10px 0;
+}
+
+.search-box-stick .search-text-stick {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    width: 0;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+    caret-color: #fff;
+    color: #fff;
+}
+
+.search-button-stick {
+    transition: all 0.25s ease-in-out;
+}
+
+.search-box-stick:hover .search-text-stick,
+.search-box-stick .search-text-stick:valid {
+    background: rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 10px 0px 10px 15px;
+    border-radius: 30px 0 0 30px;
+}
+
+.search-button-stick:hover {
+    color: #000;
+}
+
+.search-box-stick:hover,
+.search-box-stick:valid {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+}
+
+.search-box-stick .search-button-stick {
+    background-color: none;
+    border: none;
+    padding: 15px 18px 15px 0;
+    border-radius: 50%;
+}
+
+/* Logo */
+.top-header-stick .site-logo-stick {
+    text-align: center;
+}
+
+img.logo {
+    height: 4em;
+}
